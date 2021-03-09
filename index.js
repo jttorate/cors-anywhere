@@ -13,8 +13,7 @@ app.get('/api/random', (req, res) => {
         { url: 'https://jt-cors-anywhere.herokuapp.com/api/random' },
         (error, response, body) => {
             if (error || response.statusCode !== 200) {
-                console.log(error);
-                // return res.status(500).json({ type: 'error', message: error.message });
+                return res.status(500).json({ type: 'error', message: error.message });
             }
 
             res.json(JSON.parse(body));
