@@ -8,9 +8,9 @@ app.use((req, res, next) => {
     next();
 });
 
-app.get('/', (req, res) => {
+app.get('/api/random', (req, res) => {
     request(
-        { url: 'https://jt-cors-anywhere.herokuapp.com/' },
+        { url: 'https://jt-cors-anywhere.herokuapp.com/api/random' },
         (error, response, body) => {
             if (error || response.statusCode !== 200) {
                 console.log(error);
